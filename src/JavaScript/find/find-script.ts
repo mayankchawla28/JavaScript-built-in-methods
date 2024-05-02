@@ -9,8 +9,6 @@ Array.prototype.find = function(callback) {
 };
 
 const numberArray = [5, 12, 8, 130, 44];
-const responseNumberArray = numberArray.find(function(element) {
-  return element > 10;
-});
+const responseNumberArray = numberArray.find((element) => element > 10);
 
 console.log("responseNumberArray", responseNumberArray);
