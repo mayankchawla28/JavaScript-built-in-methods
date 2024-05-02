@@ -22,6 +22,7 @@
 19. **String.prototype.slice()**
 20. **Array.prototype.concat()**
 21. **Array.prototype.join()**
+22. **Array.prototype.map()**
 23. **Array.prototype.reverse()**
 24. **Array.prototype.slice()**
 25. **Array.prototype.splice()**
@@ -46,4 +47,3 @@
 44. **String.prototype.replace()**
 45. **String.prototype.search()**
 46. **String.prototype.trim()**
-47. **Array.prototype.map()**
