@@ -4,8 +4,8 @@ class MyStack {
     this.item = [];
   }
 
-  push(item) {
-    return this.item.push(item);
+  push(element) {
+    return this.item.push(element);
   }
 
   pop() {
@@ -26,5 +26,9 @@ class MyStack {
 
   size() {
     return this.item.length;
+  }
+
+  contains(element) {
+    return this.item.includes(element)
   }
 }
