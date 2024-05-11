@@ -36,5 +36,11 @@ class MyStack {
     this.item.reverse();
   }
 
-  
+  print() {
+    let str = "";
+    for (let i = 0; i < this.item.length; i++) {
+      str += this.item[i] + " ";
+    }
+    return str;
+  }
 }
