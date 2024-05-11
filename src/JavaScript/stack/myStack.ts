@@ -5,4 +5,7 @@ class MyStack {
     this.item = [];
   }
 
+  push(item) {
+    return this.item.push(item);
+  }
 }
