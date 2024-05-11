@@ -20,4 +20,8 @@ class MyStack {
   isStackEmpty() {
     return this.item.length == 0;
   }
+
+  clear() {
+    this.item = [];
+  }
 }
