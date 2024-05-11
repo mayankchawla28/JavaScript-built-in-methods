@@ -12,4 +12,8 @@ class MyStack {
   pop() {
     return this.item.length > 0 ? this.item.pop() : "Underflow";
   }
+
+  peek() {
+    return this.item[this.item.length - 1];
+  }
 }
