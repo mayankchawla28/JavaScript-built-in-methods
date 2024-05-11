@@ -1,4 +1,3 @@
-
 class MyStack {
   item;
   constructor() {
@@ -23,5 +22,9 @@ class MyStack {
 
   clear() {
     this.item = [];
+  }
+
+  size() {
+    return this.item.length;
   }
 }
