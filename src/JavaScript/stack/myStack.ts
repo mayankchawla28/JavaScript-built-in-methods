@@ -43,4 +43,17 @@ class MyStack {
     }
     return str;
   }
+
+  reverseAndReturnAsString(inputString) {
+    for (let i = 0; i < inputString.length; i++) {
+      this.push(inputString[i]);
+      console.log("item", this.item);
+    }
+
+    let reverseString = "";
+    while (!this.isStackEmpty()) {
+      reverseString += this.pop();
+    }
+    return reverseString;
+  }
 }
