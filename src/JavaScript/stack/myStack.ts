@@ -1,7 +1,7 @@
 class MyStack {
   item;
-  constructor(itemArray) {
-    this.item = itemArray || [];
+  constructor(itemArray = []) {
+    this.item = itemArray;
   }
 
   push(element) {
@@ -29,7 +29,7 @@ class MyStack {
   }
 
   contains(element) {
-    return this.item.includes(element)
+    return this.item.includes(element);
   }
 
   reverse() {
@@ -57,3 +57,11 @@ class MyStack {
     return reverseString;
   }
 }
+
+(function main() {
+  const stack = new MyStack();
+  console.log(
+    "reverseAndReturnAsString",
+    stack.reverseAndReturnAsString("eyes")
+  );
+})();
