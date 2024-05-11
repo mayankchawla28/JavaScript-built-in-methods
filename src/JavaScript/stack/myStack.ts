@@ -31,4 +31,10 @@ class MyStack {
   contains(element) {
     return this.item.includes(element)
   }
+
+  reverse() {
+    this.item.reverse();
+  }
+
+  
 }
