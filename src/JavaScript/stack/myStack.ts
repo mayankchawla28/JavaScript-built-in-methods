@@ -1,7 +1,7 @@
 class MyStack {
   item;
-  constructor() {
-    this.item = [];
+  constructor(itemArray) {
+    this.item = itemArray || [];
   }
 
   push(element) {
