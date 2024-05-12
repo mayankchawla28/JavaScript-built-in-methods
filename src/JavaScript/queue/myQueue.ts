@@ -1,6 +1,6 @@
 class MyQueue {
   items;
-  constructor (itemArray = []) {
+  constructor(itemArray = []) {
     this.items = itemArray;
   }
 
@@ -19,7 +19,7 @@ class MyQueue {
     if (this.isEmpty()) {
       return "No elements in Queue.";
     }
-    this.items[0];
+    return this.items[0];
   }
 
   isEmpty() {
@@ -34,3 +34,16 @@ class MyQueue {
     return this.items.length;
   }
 }
+
+(function main() {
+  const queue = new MyQueue();
+  queue.enqueue(10);
+  queue.enqueue(20);
+  queue.enqueue(30);
+  console.log(queue.value);
+
+  queue.dequeue();
+  console.log(queue.value);
+
+  console.log(queue.front());
+})();
