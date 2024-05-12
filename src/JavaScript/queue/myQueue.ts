@@ -8,7 +8,12 @@ class MyQueue {
     return this.items.push(element);
   }
 
-  dequeue() {}
+  dequeue() {
+    if (this.isEmpty()) {
+      return "UnderFlow";
+    }
+    return this.items.shift();
+  }
 
   front() {}
 
