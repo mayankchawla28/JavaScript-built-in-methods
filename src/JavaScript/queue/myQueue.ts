@@ -26,7 +26,7 @@ class MyQueue {
     return this.items.length === 0;
   }
 
-  value() {
+  get value() {
     return this.items;
   }
 
