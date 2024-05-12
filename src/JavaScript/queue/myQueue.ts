@@ -4,7 +4,9 @@ class MyQueue {
     this.items = itemArray;
   }
 
-  enqueue() {}
+  enqueue(element) {
+    return this.items.push(element);
+  }
 
   dequeue() {}
 
