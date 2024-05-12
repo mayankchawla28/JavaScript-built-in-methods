@@ -26,9 +26,11 @@ class MyQueue {
     return this.items.length === 0;
   }
 
+  value() {
+    return this.items;
+  }
 
   get size() {
-    // Return the number of elements in the queue
     return this.items.length;
   }
 }
