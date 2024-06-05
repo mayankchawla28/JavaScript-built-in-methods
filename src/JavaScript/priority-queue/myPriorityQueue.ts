@@ -22,7 +22,9 @@ class MyPriorityQueue {
 
   front() {}
 
-  isEmpty() {}
+  isEmpty() {
+    return this.items.length === 0;
+  }
 
   get value() {
     return this.items;
