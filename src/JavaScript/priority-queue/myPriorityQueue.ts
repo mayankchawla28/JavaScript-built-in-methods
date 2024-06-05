@@ -6,8 +6,8 @@ class MyPriorityQueue {
 
   enqueue(element, priority) {
     let isAdded = false;
-    for (let i = 0; i < this.size(); i++) {
-      if (this.items[i].priority < priority) {
+    for (let i = 0; i < this.size; i++) {
+      if (this.items[i].priority > priority) {
         this.items.splice(i, 0, { element, priority });
         isAdded = true;
         break;
@@ -45,6 +45,13 @@ class MyPriorityQueue {
   }
 
   get clear() {
-    return this.items = [];
+    return (this.items = []);
   }
 }
+
+(function main() {
+  const pQueue = new MyPriorityQueue();
+  pQueue.enqueue("helloTwo", 2)
+  pQueue.enqueue("helloOne", 1)
+  console.log(pQueue.value);
+})();
