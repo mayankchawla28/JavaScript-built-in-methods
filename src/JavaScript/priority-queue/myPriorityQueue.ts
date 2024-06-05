@@ -43,4 +43,8 @@ class MyPriorityQueue {
   get size() {
     return this.items.length;
   }
+
+  get clear() {
+    return this.items = [];
+  }
 }
