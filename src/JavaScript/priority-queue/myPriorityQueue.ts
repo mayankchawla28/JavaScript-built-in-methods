@@ -18,7 +18,12 @@ class MyPriorityQueue {
     }
   }
 
-  dequeue() {}
+  dequeue() {
+    if (this.isEmpty()) {
+      return "Underflow";
+    }
+    return this.items.shift();
+  }
 
   front() {}
 
