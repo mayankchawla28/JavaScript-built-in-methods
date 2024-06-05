@@ -25,7 +25,12 @@ class MyPriorityQueue {
     return this.items.shift();
   }
 
-  front() {}
+  front() {
+    if (this.isEmpty()) {
+      return "No elements in Queue.";
+    }
+    return this.items[0];
+  }
 
   isEmpty() {
     return this.items.length === 0;
