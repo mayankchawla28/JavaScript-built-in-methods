@@ -51,7 +51,14 @@ class MyPriorityQueue {
 
 (function main() {
   const pQueue = new MyPriorityQueue();
+  console.log(pQueue.isEmpty());
   pQueue.enqueue("helloTwo", 2)
+  pQueue.enqueue("helloThree", 2)
   pQueue.enqueue("helloOne", 1)
-  console.log(pQueue.value);
+  console.log("1", pQueue.value);
+  pQueue.dequeue();
+  console.log("2", pQueue.value);
+  pQueue.front();
+  console.log("3", pQueue.value);
+  console.log(pQueue.size);
 })();
