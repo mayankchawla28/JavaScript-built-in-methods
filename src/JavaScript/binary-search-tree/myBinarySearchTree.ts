@@ -51,4 +51,10 @@ class MyBinarySearchTree {
   }
 }
 
-(function main() {})();
+(function main() {
+  const BST = new MyBinarySearchTree();
+  BST.insert(15);
+  BST.insert(25);
+  BST.insert(10);
+  BST.printNode(BST.root);
+})();
