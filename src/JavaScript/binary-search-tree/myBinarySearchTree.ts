@@ -40,6 +40,15 @@ class MyBinarySearchTree {
     }
   }
 
+  printNode(node) {
+    if (node !== null) {
+      console.log("Node data:", node.data);
+      console.log("Left child:", node.left ? node.left.data : "null");
+      console.log("Right child:", node.right ? node.right.data : "null");
+    } else {
+      console.log("Node is null.");
+    }
+  }
 }
 
 (function main() {})();
