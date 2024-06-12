@@ -40,14 +40,20 @@ class MyBinarySearchTree {
     }
   }
 
-  printNode(node) {
-    if (node !== null) {
-      console.log("Node data:", node.data);
-      console.log("Left child:", node.left ? node.left.data : "null");
-      console.log("Right child:", node.right ? node.right.data : "null");
+  searchNode(node, data) {
+    if (node === null) {
+      return null;
+    } else if (data < node.data) {
+      return this.searchNode(node.left, data);
+    } else if (data > node.data) {
+      return this.searchNode(node.right, data);
     } else {
-      console.log("Node is null.");
+      return node;
     }
+  }
+
+  search(data) {
+    return this.searchNode(this.root, data);
   }
 }
 
@@ -56,5 +62,14 @@ class MyBinarySearchTree {
   BST.insert(15);
   BST.insert(25);
   BST.insert(10);
-  BST.printNode(BST.root);
+  BST.insert(7);
+  BST.insert(22);
+  BST.insert(17);
+  BST.insert(13);
+  BST.insert(14);
+  BST.insert(12);
+  BST.insert(5);
+  BST.insert(9);
+  BST.insert(27);
+  // BST.printNode(BST.root);
 })();
