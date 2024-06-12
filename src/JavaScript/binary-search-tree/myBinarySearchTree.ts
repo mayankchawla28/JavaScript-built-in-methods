@@ -55,6 +55,14 @@ class MyBinarySearchTree {
   search(data) {
     return this.searchNode(this.root, data);
   }
+
+  printTree(node = this.root, prefix = "", isLeft = true) {
+    if (node) {
+      this.printTree(node.right, prefix + (isLeft ? "│   " : "    "), false);
+      console.log(prefix + (isLeft ? "└── " : "┌── ") + node.data);
+      this.printTree(node.left, prefix + (isLeft ? "    " : "│   "), true);
+    }
+  }
 }
 
 (function main() {
@@ -71,5 +79,6 @@ class MyBinarySearchTree {
   BST.insert(5);
   BST.insert(9);
   BST.insert(27);
+  BST.printTree();
   // BST.printNode(BST.root);
 })();
