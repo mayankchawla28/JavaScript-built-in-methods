@@ -56,6 +56,20 @@ class MyBinarySearchTree {
     return this.searchNode(this.root, data);
   }
 
+  findMinRecord(node) {
+    if (node === null) {
+      throw new Error("Tree is empty");
+    }
+    if (!node.left) {
+      return node.data
+    }
+    return this.findMinRecord(node.left);
+  }
+
+  get findMin() {
+    return this.findMinRecord(this.root);
+  }
+
   printTree(node = this.root, prefix = "", isLeft = true) {
     if (node) {
       this.printTree(node.right, prefix + (isLeft ? "│   " : "    "), false);
@@ -80,5 +94,6 @@ class MyBinarySearchTree {
   BST.insert(9);
   BST.insert(27);
   BST.printTree();
+  console.log(BST.findMin);
   // BST.printNode(BST.root);
 })();
