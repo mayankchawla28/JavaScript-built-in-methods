@@ -42,13 +42,15 @@ class MyBinarySearchTree {
 
   searchNode(node, data) {
     if (node === null) {
-      return null;
+      return false;
     } else if (data < node.data) {
       return this.searchNode(node.left, data);
     } else if (data > node.data) {
       return this.searchNode(node.right, data);
+    } else if (node.data === data) {
+      return true;
     } else {
-      return node;
+      return false;
     }
   }
 
@@ -68,6 +70,20 @@ class MyBinarySearchTree {
 
   get findMin() {
     return this.findMinRecord(this.root);
+  }
+
+  findMaxRecord(node) {
+    if (node === null) {
+      throw new Error("Tree is empty")
+    }
+    if (!node.right) {
+      return node.data;
+    }
+    return this.findMaxRecord(node.right);
+  }
+
+  get findMax() {
+    return this.findMaxRecord(this.root);
   }
 
   printTree(node = this.root, prefix = "", isLeft = true) {
@@ -92,8 +108,10 @@ class MyBinarySearchTree {
   BST.insert(12);
   BST.insert(5);
   BST.insert(9);
-  BST.insert(27);
+  BST.insert(270);
   BST.printTree();
   console.log(BST.findMin);
+  console.log(BST.findMax);
+  console.log(BST.search(250));
   // BST.printNode(BST.root);
 })();
