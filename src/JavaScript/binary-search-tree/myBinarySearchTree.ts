@@ -93,18 +93,13 @@ class MyBinarySearchTree {
     } else if (targetValue > node.data) {
       node.right = this.removeRecord(node.right, targetValue);
     } else {
-      // Node with the target value found
       if (node.left === null && node.right === null) {
-        // Case 1: Node is a leaf (no children)
         return null;
       } else if (node.left === null) {
-        // Case 2: Node has only right child
         return node.right;
       } else if (node.right === null) {
-        // Case 3: Node has only left child
         return node.left;
       } else {
-        // Case 4: Node has both left and right children
         const minRight = this.findMinRecord(node.right);
         node.data = minRight;
         node.right = this.removeRecord(node.right, minRight);
