@@ -19,6 +19,22 @@ class myHashTable {
     this.table[index] = [key, value];
     this.size++;
   }
+
+  get(key) {
+    const index = this.hash(key);
+    return this.table[index];
+  }
+
+  printHashTable() {
+    for (let i = 0; i < this.table.length; i++) {
+      const bucket = this.table[i];
+      if (bucket) {
+        console.log(`Bucket ${i}: ${bucket.join(", ")}`);
+      } else {
+        console.log(`Bucket ${i}: Empty`);
+      }
+    }
+  }
 }
 
 (function main() {
