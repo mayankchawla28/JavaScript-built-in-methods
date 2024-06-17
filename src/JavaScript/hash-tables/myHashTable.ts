@@ -19,6 +19,11 @@ class myHashTable {
     this.table[index] = [key, value];
     this.size++;
   }
+
+  get(key) {
+    const index = this.hash(key);
+    return this.table[index];
+  }
 }
 
 (function main() {
