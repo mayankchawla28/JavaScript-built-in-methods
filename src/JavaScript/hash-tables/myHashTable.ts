@@ -13,6 +13,12 @@ class myHashTable {
     }
     return hash % this.table.length;
   }
+
+  set(key, value) {
+    const index = this.hash(key);
+    this.table[index] = [key, value];
+    this.size++;
+  }
 }
 
 (function main() {
