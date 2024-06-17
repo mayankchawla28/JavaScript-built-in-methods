@@ -49,9 +49,8 @@ class MyBinarySearchTree {
       return this.searchNode(node.right, data);
     } else if (node.data === data) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   search(data) {
@@ -63,7 +62,7 @@ class MyBinarySearchTree {
       throw new Error("Tree is empty");
     }
     if (!node.left) {
-      return node.data
+      return node.data;
     }
     return this.findMinRecord(node.left);
   }
@@ -74,7 +73,7 @@ class MyBinarySearchTree {
 
   findMaxRecord(node) {
     if (node === null) {
-      throw new Error("Tree is empty")
+      throw new Error("Tree is empty");
     }
     if (!node.right) {
       return node.data;
@@ -84,6 +83,33 @@ class MyBinarySearchTree {
 
   get findMax() {
     return this.findMaxRecord(this.root);
+  }
+
+  removeRecord(node, targetValue) {
+    if (node === null) return null;
+
+    if (targetValue < node.data) {
+      node.left = this.removeRecord(node.left, targetValue);
+    } else if (targetValue > node.data) {
+      node.right = this.removeRecord(node.right, targetValue);
+    } else {
+      if (node.left === null && node.right === null) {
+        return null;
+      } else if (node.left === null) {
+        return node.right;
+      } else if (node.right === null) {
+        return node.left;
+      } else {
+        const minRight = this.findMinRecord(node.right);
+        node.data = minRight;
+        node.right = this.removeRecord(node.right, minRight);
+      }
+    }
+    return node;
+  }
+
+  remove(value) {
+   return this.removeRecord(this.root, value);
   }
 
   printTree(node = this.root, prefix = "", isLeft = true) {
@@ -110,8 +136,10 @@ class MyBinarySearchTree {
   BST.insert(9);
   BST.insert(270);
   BST.printTree();
+  BST.remove(15);
+  BST.printTree();
   console.log(BST.findMin);
   console.log(BST.findMax);
-  console.log(BST.search(250));
+  console.log(BST.search(15));
   // BST.printNode(BST.root);
 })();
