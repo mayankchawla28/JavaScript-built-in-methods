@@ -30,3 +30,11 @@ class LinkedList {
     return this;
   }
 }
+
+(function main() {
+  const myList = new LinkedList();
+  myList.pushEnd(10);
+  myList.pushEnd(20);
+  myList.pushEnd(30);
+  console.log(myList);
+})();
